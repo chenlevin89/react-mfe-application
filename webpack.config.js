@@ -41,16 +41,20 @@ module.exports = env => ({
             },
             shared: {
                 'react': {
-                    requiredVersion: `${dependencies['react']}`
+                    requiredVersion: `${dependencies['react']}`,
+                    singleton:true
                 },
                 'react-dom': {
-                    requiredVersion: `${dependencies['react-dom']}`
+                    requiredVersion: `${dependencies['react-dom']}`,
+                    singleton:true
                 },
                 'react-router-dom': {
-                    requiredVersion: dependencies['react-router-dom']
+                    requiredVersion: dependencies['react-router-dom'],
+                    singleton:true
                 },
                 '@chenlevin89/awesome-lib': {
-                    requiredVersion: dependencies['@chenlevin89/awesome-lib']
+                    requiredVersion: dependencies['@chenlevin89/awesome-lib'],
+                    singleton:true
                 }
             }
         }),

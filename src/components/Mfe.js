@@ -1,22 +1,17 @@
-import React, {useState, useEffect} from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    NavLink,
-    Redirect,
-    useRouteMatch
-} from "react-router-dom";
-import './Mfe.css'
+import React, {useState} from 'react';
+import {Switch,Route,NavLink,useRouteMatch} from "react-router-dom";
 import {observable, ButtonComponent} from '@chenlevin89/awesome-lib'
+
+import './Mfe.css'
+
 
 export default function Mfe() {
 
     let {path, url} = useRouteMatch();
 
     const [showAlert, setShowAlert] = useState(false);
-    const [withdrawInput, setWithdrawInput] = useState(0);
-    const [depositInput, setDepositInput] = useState(0);
+    const [withdrawInput, setWithdrawInput] = useState(1000);
+    const [depositInput, setDepositInput] = useState(500);
 
     const increaseClicked = (value) => {
         observable.notify({eventName: 'update_balance', value: Number(value)});
@@ -28,8 +23,12 @@ export default function Mfe() {
 
     return (
         <div>
-            {showAlert && <div className="alert-info">Operation complete successfully.</div>}
-            <h1>Operations</h1>
+            {showAlert && <div className="alert-info">Operation complete successfully !!</div>}
+            <h1>
+                <span>Operations</span>
+                <span className="version">V{React.version}</span>
+            </h1>
+            
             <div className="operations-container">
 
                 <div className="menu-container">
@@ -38,7 +37,7 @@ export default function Mfe() {
                             <NavLink exact to={`${url}`} activeClassName="active">Withdraw</NavLink>
                         </li>
                         <li>
-                            <NavLink exact to={`${url}/deposit`} activeClassName="active">Deposit</NavLink>
+                            <NavLink exact to={`${ url !== '/' ? url : ''}/deposit`} activeClassName="active">Deposit</NavLink>
                         </li>
                     </ul>
                 </div>
@@ -52,7 +51,7 @@ export default function Mfe() {
                                 <ButtonComponent text="Apply" click={e => increaseClicked(-1 * withdrawInput)} />
                             </div>
                         </Route>
-                        <Route path={`${path}/deposit`}>
+                        <Route path={`${ path !== '/' ? path : ''}/deposit`}>
                             <div>
                                 <h1>Deposit</h1>
                                 <input autoFocus type="number" value={depositInput} onInput={e => setDepositInput(e.target.value)} />

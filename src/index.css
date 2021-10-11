@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ul{
+  list-style-type: none;
+}
+
+ul li {
+  margin: 15px 5px;
+}
+
+ul li a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #0C138C;
+  font-weight: 600;
+  font-size: 13px;
+}

@@ -74,3 +74,12 @@ button{
     font-size: 12px;
     border-left: 4px solid var(--fu-primary-500,#1b9c71);
 }
+
+.version{
+    padding: 10px;
+    border: 1px solid var(--fu-primary-500,#1b9c71);
+    background-color: var(--fu-positive-100,#daf5ec);
+    border-radius: 15px;
+    margin-left: 10px;
+    font-size: 14px;
+}
