@@ -36,7 +36,7 @@ module.exports = env => ({
             exposes: {
                 './MfeComponent': {
                     import :'./src/components/Mfe',
-                    name: `remote-app-1`
+                    name: `src_components_Operations`
                 }
             },
             shared: {
