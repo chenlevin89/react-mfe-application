@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import {Switch,Route,NavLink,useRouteMatch} from "react-router-dom";
 import {observable, ButtonComponent} from '@chenlevin89/awesome-lib'
 
-import './Mfe.css'
+import './Operations.css'
 
 
-export default function Mfe() {
+export default function Operations() {
 
     let {path, url} = useRouteMatch();
 

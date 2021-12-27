@@ -30,12 +30,12 @@ module.exports = env => ({
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: "remoteApp1",
-            library: {type: "var", name: "remoteApp1"},
+            name: "reactRemote",
+            library: {type: "var", name: "reactRemote"},
             filename: "remoteEntry.js",
             exposes: {
-                './MfeComponent': {
-                    import :'./src/components/Mfe',
+                './Operations': {
+                    import :'./src/components/Operations',
                     name: `src_components_Operations`
                 }
             },
